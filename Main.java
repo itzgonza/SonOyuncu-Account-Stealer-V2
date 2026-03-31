@@ -150,7 +150,7 @@ public class Main {
                 if (baseAddress == 0)
                     continue;
 
-                byte[] memoryData = readProcessMemory(processId, baseAddress + 0x1C6900, 100);
+                byte[] memoryData = readProcessMemory(processId, baseAddress + 0x1ebbb0, 100);
                 if (memoryData == null)
                     continue;
 
